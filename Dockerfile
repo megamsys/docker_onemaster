@@ -23,13 +23,7 @@ RUN buildDeps=' \
     && tar -xvf one.tar.gz -C debs --strip-components=1 \
     && rm one.tar.gz \
     && cd debs \
-    && dpkg -i opennebula-common*.deb \
-    && dpkg -i opennebula-flow*.deb \
-    && dpkg -i opennebula-gate*.deb \
-    && dpkg -i opennebula-sunstone*.deb \
-    && dpkg -i opennebula-tools*.deb \
-    && dpkg -i opennebula_$DEB_VERSION_amd64.deb \
-    && dpkg -i ruby*.deb \
+    && dpkg -i libopennebula*.deb  opennebula-common*.deb  opennebula-flow*.deb opennebula-gate*.deb opennebula-sunstone*.deb opennebula-tools*.deb  opennebula_$VERSION*.deb ruby*.deb \
     ; apt-get install -fy --no-install-recommends \
     && gem install treetop parse-cron \
     && apt-get install -y --no-install-recommends openssh-server \
@@ -37,8 +31,8 @@ RUN buildDeps=' \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* \
     && cd ../../ \
-    && rm -r debs \
-    
+    && rm -r debs 
+
 COPY start.sh /
 
 CMD ["/start.sh"]
