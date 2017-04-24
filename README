@@ -1,0 +1,5 @@
+
+
+Opennebula Master:
+
+docker run -it --name onemaster --net=host  megamio/docker_onemaster
