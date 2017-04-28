@@ -55,5 +55,4 @@ RUN buildDeps=' \
     		cat /var/lib/one/.ssh/id_ed25519.pub > /var/lib/one/.ssh/authorized_keys2; \
     		chown oneadmin. /var/lib/one/.ssh/authorized_keys2; \
     		touch /READY ;\
-      fi \
-  && tail -f /var/log/one/*.{log,error} /var/log/sshd.log
+      fi
