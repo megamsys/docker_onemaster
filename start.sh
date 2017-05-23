@@ -11,7 +11,7 @@ su - oneadmin -c "one start"
 	/usr/sbin/sshd -E /var/log/sshd.log
 	if [ ! -e /READY ]; then
 		su - oneadmin -c "mkdir -p .ssh"
-		su - oneadmin -c "ssh-keygen -q -f .ssh/id_ed25519 -N \"\" -t ed25519 -C \"\$USER@\""
+                su - oneadmin -c "ssh-keygen -q -f .ssh/id_ed25519 -N \"\" -t ed25519 -C \"\$USER@\$HOSTNAME\""
 		su - oneadmin -c "touch /var/lib/one/.ssh/config"
 		cat >> /var/lib/one/.ssh/config<<EOF
 Host *
