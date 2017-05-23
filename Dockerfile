@@ -35,5 +35,7 @@ RUN buildDeps=' \
 
     
    COPY start.sh /
+  
+   EXPOSE  9869
 
    CMD ["/start.sh"]
