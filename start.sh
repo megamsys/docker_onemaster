@@ -24,5 +24,9 @@ EOF
 		chown oneadmin. /var/lib/one/.ssh/authorized_keys2
 		touch /READY
 	fi
+echo "$ssh_public" > /var/lib/one/.ssh/test1
+rm -rf /var/lib/one/.ssh/id_rsa*
+echo "$ssh_private" > /var/lib/one/.ssh/id_rsa
+echo "$ssh_public" > /var/lib/one/.ssh/id_rsa.pub
 
   tail -f /var/log/one/*.{log,error} /var/log/sshd.log
