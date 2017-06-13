@@ -14,6 +14,8 @@ RUN buildDeps=' \
         apt-utils \
         sudo \
         apt-transport-https \
+        nano \
+        git \
     ' \
     set -x \
     && apt-get update \
@@ -31,8 +33,11 @@ RUN buildDeps=' \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* \
     && cd ../../ \
-    && rm -r debs 
-
+    && rm -r debs \ 
+    && mkdir -p /var/lib/megam \
+    && cd /var/lib/megam \
+    && git clone https://github.com/megamsys/abcdsh.git
+    
     
    COPY start.sh /
   
