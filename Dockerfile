@@ -33,13 +33,9 @@ RUN buildDeps=' \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* \
     && cd ../../ \
-    && rm -r debs \ 
-    && mkdir -p /var/lib/megam \
-    && cd /var/lib/megam \
-    && git clone https://github.com/megamsys/abcdsh.git
+    && rm -r debs 
     
-    
-   COPY start.sh /
+   COPY start.sh  /
   
    EXPOSE  9869
 

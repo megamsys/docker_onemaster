@@ -29,4 +29,8 @@ rm -rf /var/lib/one/.ssh/id_rsa*
 echo "$ssh_private" > /var/lib/one/.ssh/id_rsa
 echo "$ssh_public" > /var/lib/one/.ssh/id_rsa.pub
 
+mkdir -p /var/lib/megam
+cd  /var/lib/megam
+git clone https://github.com/megamsys/abcdsh.git
+
   tail -f /var/log/one/*.{log,error} /var/log/sshd.log
